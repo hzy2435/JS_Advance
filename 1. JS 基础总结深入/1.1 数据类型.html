@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型</title>
+</head>
+<body>
+
+    <script>
+        // 1. undefined
+        var a;
+        console.log("undefined: ", a, typeof a, typeof a === 'undefined', a === undefined);
+        // 2. number, string, boolean, null
+        var a1 = 3;
+        console.log("number: ", typeof a1, typeof a1 === 'number');
+        var a2 = '1223';
+        console.log("string: ", typeof a2, typeof a2 === 'string');
+        var a3 = true;
+        console.log("boolean: ", typeof a3, typeof a3 === 'boolean');
+        var a4 = null;
+        console.log("null: ", typeof a4, a4 === null);
+
+        console.log('---------------');
+        // 3. object
+        let b1 = {
+            b2: [123, 'asd', true, console.log],
+            b3: function () {
+                console.log('b3');
+                return function () {
+                    return 'HuangZeYi';
+                }
+            }
+        };
+        console.log("b1: ", typeof b1, b1 instanceof Object, b1 instanceof Array, b1 instanceof Function);
+        console.log("b1.b2: ", typeof b1.b2, b1.b2 instanceof Object, b1.b2 instanceof Array, b1.b2 instanceof Function);
+        console.log("b1.b3: ", typeof b1.b3, b1.b3 instanceof Object, b1.b3 instanceof Array, b1.b3 instanceof Function);
+        // 调用
+        b1.b2[3]('你好, 我是函数');
+        console.log(b1.b3()());
+    </script>
+
+</body>
+</html>
